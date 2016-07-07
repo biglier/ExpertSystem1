@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: ExpertTest, Configuration: Debug Any CPU ------
+1>C:\Users\Slavik\Documents\Visual Studio 2015\Projects\ExpertSystem\ExpertTest\Form1.cs(16,16,16,17): warning CS0414: The field 'Form1.s' is assigned but its value is never used
+1>  ExpertTest -> C:\Users\Slavik\Documents\Visual Studio 2015\Projects\ExpertSystem\ExpertTest\bin\Debug\ExpertTest.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
