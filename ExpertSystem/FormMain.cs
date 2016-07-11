@@ -67,7 +67,7 @@ namespace ExpertSystem
                 propertyname.Add(p.Name);
             }
             var distproperty = propertyname.Distinct();
-            listBox1.DataSource = distproperty.ToList();
+            listBoxProperties.DataSource = distproperty.ToList();
             List<String> questions = new List<String>();
             var qdata = from q in myContext.PropertyQuestions
                         orderby q.Question
@@ -76,7 +76,7 @@ namespace ExpertSystem
             {
                 questions.Add(q.Question);
             }
-            listBox5.DataSource = questions.ToList();
+            listBoxQuestions.DataSource = questions.ToList();
             listQuestions.DataSource = questions.ToList();
         }
 
@@ -469,7 +469,7 @@ namespace ExpertSystem
                             propertyname.Add(p.Name);
                         }
                         var distproperty = propertyname.Distinct();
-                        listBox1.DataSource = distproperty.ToList();
+                        listBoxProperties.DataSource = distproperty.ToList();
                     }
                     catch (Exception ex)
                     {
@@ -484,7 +484,7 @@ namespace ExpertSystem
             try
             {
                 var pdata = from p in myContext.Properties
-                            where p.Name == listBox1.SelectedItem.ToString()
+                            where p.Name == listBoxProperties.SelectedItem.ToString()
                             select p;
                 foreach (var pp in pdata)
                 {
@@ -541,7 +541,7 @@ namespace ExpertSystem
         private void buttonPropDel_Click(object sender, EventArgs e)
         {
             var currentproperty = from c in myContext.Properties
-                                  where c.Name == listBox1.SelectedItem.ToString()
+                                  where c.Name == listBoxProperties.SelectedItem.ToString()
                                   select c;
             List<Property> delproperties = new List<ExpertSystem.Property>();
             foreach (var u in currentproperty)
@@ -565,7 +565,7 @@ namespace ExpertSystem
                 propertyname.Add(p.Name);
             }
             var distproperty = propertyname.Distinct();
-            listBox1.DataSource = distproperty.ToList();
+            listBoxProperties.DataSource = distproperty.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -574,8 +574,8 @@ namespace ExpertSystem
             {
                 PropertyQuestion question = new PropertyQuestion
                 {
-                    Question = textBox4.Text,
-                    PropertyName = textBox5.Text
+                    Question = textBoxQuestion.Text,
+                    PropertyName = textBoxQuestionProperty.Text
                 };
                 myContext.PropertyQuestions.InsertOnSubmit(question);
                 myContext.SubmitChanges();
@@ -600,8 +600,8 @@ namespace ExpertSystem
                 {
                     questions.Add(q.Question);
                 }
-                listBox5.DataSource = questions.ToList();
-                listBox5.DataSource = questions.ToList();
+                listBoxQuestions.DataSource = questions.ToList();
+                listBoxQuestions.DataSource = questions.ToList();
             }
             catch
             {
@@ -643,8 +643,8 @@ namespace ExpertSystem
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = listBox1.SelectedItem.ToString();
-            var plist = (from p in myContext.Propertiest
+            string name = listBoxProperties.SelectedItem.ToString();
+            var plist = (from p in myContext.Properties
                          where p.Name == name
                          select p).First();
             textBoxPropName.Text = plist.Name;
@@ -652,11 +652,11 @@ namespace ExpertSystem
             try
             {
                 var question = from q in myContext.PropertyQuestions
-                               where q.PropertyName == listBox1.SelectedItem.ToString()
+                               where q.PropertyName == listBoxProperties.SelectedItem.ToString()
                                select q;
                 foreach (var q in question)
                 {
-                    q.PropertyName = listBox1.SelectedItem.ToString();
+                    q.PropertyName = listBoxProperties.SelectedItem.ToString();
                 }
             }
             catch { }
@@ -664,14 +664,14 @@ namespace ExpertSystem
             {
                 List<String> propdict = new List<String>();
                 var data = (from p in myContext.Dicts
-                            where p.Property == listBox1.SelectedItem.ToString()
+                            where p.Property == listBoxProperties.SelectedItem.ToString()
                             orderby p.Value
                             select p);
                 foreach (var p in data)
                 {
                     propdict.Add(p.Value);
                 }
-                listBox3.DataSource = propdict.ToList();
+                listBoxSIct.DataSource = propdict.ToList();
             }
             catch { }
         }
@@ -685,8 +685,8 @@ namespace ExpertSystem
         {
             Dict dictelement = new Dict()
             {
-                Property = listBox1.SelectedItem.ToString(),
-                Value = textBox3.Text
+                Property = listBoxProperties.SelectedItem.ToString(),
+                Value = textBoxDictValue.Text
             };
             myContext.Dicts.InsertOnSubmit(dictelement);
             myContext.SubmitChanges();
@@ -694,14 +694,14 @@ namespace ExpertSystem
             {
                 List<String> propdict = new List<String>();
                 var data = (from p in myContext.Dicts
-                            where p.Property == listBox1.SelectedItem.ToString()
+                            where p.Property == listBoxProperties.SelectedItem.ToString()
                             orderby p.Value
                             select p);
                 foreach (var p in data)
                 {
                     propdict.Add(p.Value);
                 }
-                listBox3.DataSource = propdict.ToList();
+                listBoxSIct.DataSource = propdict.ToList();
                
             }
             catch { };
@@ -713,8 +713,8 @@ namespace ExpertSystem
             {
                 List<Dict> propertydictionary = new List<ExpertSystem.Dict>();
                 var del = from c in myContext.Dicts
-                          where c.Value == listBox3.SelectedItem.ToString()
-                          && c.Property == listBox1.SelectedItem.ToString()
+                          where c.Value == listBoxSIct.SelectedItem.ToString()
+                          && c.Property == listBoxProperties.SelectedItem.ToString()
                           select c;
                 foreach (var d in del)
                 {
@@ -724,21 +724,21 @@ namespace ExpertSystem
                 myContext.SubmitChanges();
                 List<String> propdict = new List<String>();
                 var data = (from p in myContext.Dicts
-                            where p.Property == listBox1.SelectedItem.ToString()
+                            where p.Property == listBoxProperties.SelectedItem.ToString()
                             orderby p.Value
                             select p);
                 foreach (var p in data)
                 {
                     propdict.Add(p.Value);
                 }
-                listBox3.DataSource = propdict.ToList();
+                listBoxSIct.DataSource = propdict.ToList();
             }
             catch { };
         }
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox3.Text = listBox3.SelectedItem.ToString();
+            textBoxDictValue.Text = listBoxSIct.SelectedItem.ToString();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -746,23 +746,23 @@ namespace ExpertSystem
             try
             {
                 var search = (from c in myContext.Dicts
-                              where c.Value == listBox3.SelectedItem.ToString()
+                              where c.Value == listBoxSIct.SelectedItem.ToString()
                               select c);
                 foreach (var d in search)
                 {
-                    d.Value = textBox3.Text;
+                    d.Value = textBoxDictValue.Text;
                 }
                 myContext.SubmitChanges();
                 List<String> propdict = new List<String>();
                 var data = (from p in myContext.Dicts
-                            where p.Property == listBox1.SelectedItem.ToString()
+                            where p.Property == listBoxProperties.SelectedItem.ToString()
                             orderby p.Value
                             select p);
                 foreach (var p in data)
                 {
                     propdict.Add(p.Value);
                 }
-                listBox3.DataSource = propdict.ToList();
+                listBoxSIct.DataSource = propdict.ToList();
             }
             catch (Exception ex)
             {
@@ -780,10 +780,10 @@ namespace ExpertSystem
             try
             {
                 var question = (from q in myContext.PropertyQuestions
-                                where q.Question == listBox5.SelectedItem.ToString()
+                                where q.Question == listBoxQuestions.SelectedItem.ToString()
                                 select q).Single();
-                textBox4.Text = question.Question;
-                textBox5.Text = question.PropertyName;
+                textBoxQuestion.Text = question.Question;
+                textBoxQuestionProperty.Text = question.PropertyName;
                 var qWeight = (from w in myContext.AnswerWeights
                                where w.QuestionId == question.Id
                                select w).Single();
@@ -798,7 +798,7 @@ namespace ExpertSystem
         {
             List<PropertyQuestion> delquestion = new List<PropertyQuestion>();
             var qdata = from q in myContext.PropertyQuestions
-                        where q.Question == listBox5.SelectedItem.ToString()
+                        where q.Question == listBoxQuestions.SelectedItem.ToString()
                         select q;
             foreach (var q in qdata)
             {
@@ -814,21 +814,21 @@ namespace ExpertSystem
             {
                 questions.Add(q.Question);
             }
-            listBox5.DataSource = questions.ToList();
+            listBoxQuestions.DataSource = questions.ToList();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox5.Text = listBox1.SelectedItem.ToString();
+            textBoxQuestionProperty.Text = listBoxProperties.SelectedItem.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var qdata = (from q in myContext.PropertyQuestions
-                        where q.Question == listBox5.SelectedItem.ToString()
+                        where q.Question == listBoxQuestions.SelectedItem.ToString()
                         select q).Single();
-            qdata.Question = textBox4.Text;
-            qdata.PropertyName = textBox5.Text;
+            qdata.Question = textBoxQuestion.Text;
+            qdata.PropertyName = textBoxQuestionProperty.Text;
             AnswerWeight weight = new  AnswerWeight();
             weight=myContext.AnswerWeights.Where(w=> w.QuestionId==qdata.Id)
                                            .Select(w=>w).Single();

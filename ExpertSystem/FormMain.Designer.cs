@@ -35,24 +35,24 @@
             this.labelDefWeight = new System.Windows.Forms.Label();
             this.textBoxWeight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxQuestionProperty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonGetProperty = new System.Windows.Forms.Button();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.textBoxDictValue = new System.Windows.Forms.TextBox();
             this.textBoxInf = new System.Windows.Forms.TextBox();
             this.textBoxPropName = new System.Windows.Forms.TextBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.listBoxQuestions = new System.Windows.Forms.ListBox();
+            this.buttonDictChange = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonDictAdd = new System.Windows.Forms.Button();
+            this.listBoxSIct = new System.Windows.Forms.ListBox();
+            this.listBoxProperties = new System.Windows.Forms.ListBox();
+            this.buttonQuestionDel = new System.Windows.Forms.Button();
+            this.buttonQuestionAdd = new System.Windows.Forms.Button();
+            this.buttonQuestionChange = new System.Windows.Forms.Button();
             this.buttonPropDel = new System.Windows.Forms.Button();
             this.buttonPropAdd = new System.Windows.Forms.Button();
             this.buttonPropReg = new System.Windows.Forms.Button();
@@ -105,24 +105,24 @@
             this.tabPage3.Controls.Add(this.labelDefWeight);
             this.tabPage3.Controls.Add(this.textBoxWeight);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.textBoxQuestionProperty);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.textBox4);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.buttonGetProperty);
+            this.tabPage3.Controls.Add(this.textBoxQuestion);
+            this.tabPage3.Controls.Add(this.textBoxDictValue);
             this.tabPage3.Controls.Add(this.textBoxInf);
             this.tabPage3.Controls.Add(this.textBoxPropName);
-            this.tabPage3.Controls.Add(this.listBox5);
-            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.listBoxQuestions);
+            this.tabPage3.Controls.Add(this.buttonDictChange);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.listBox3);
-            this.tabPage3.Controls.Add(this.listBox1);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.buttonDel);
+            this.tabPage3.Controls.Add(this.buttonDictAdd);
+            this.tabPage3.Controls.Add(this.listBoxSIct);
+            this.tabPage3.Controls.Add(this.listBoxProperties);
+            this.tabPage3.Controls.Add(this.buttonQuestionDel);
+            this.tabPage3.Controls.Add(this.buttonQuestionAdd);
+            this.tabPage3.Controls.Add(this.buttonQuestionChange);
             this.tabPage3.Controls.Add(this.buttonPropDel);
             this.tabPage3.Controls.Add(this.buttonPropAdd);
             this.tabPage3.Controls.Add(this.buttonPropReg);
@@ -167,12 +167,12 @@
             this.label1.TabIndex = 50;
             this.label1.Text = "Вага питання";
             // 
-            // textBox5
+            // textBoxQuestionProperty
             // 
-            this.textBox5.Location = new System.Drawing.Point(675, 440);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(384, 20);
-            this.textBox5.TabIndex = 45;
+            this.textBoxQuestionProperty.Location = new System.Drawing.Point(675, 440);
+            this.textBoxQuestionProperty.Name = "textBoxQuestionProperty";
+            this.textBoxQuestionProperty.Size = new System.Drawing.Size(384, 20);
+            this.textBoxQuestionProperty.TabIndex = 45;
             // 
             // label6
             // 
@@ -183,29 +183,29 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Властивість";
             // 
-            // button9
+            // buttonGetProperty
             // 
-            this.button9.Location = new System.Drawing.Point(1060, 440);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(19, 23);
-            this.button9.TabIndex = 46;
-            this.button9.Text = "+";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.buttonGetProperty.Location = new System.Drawing.Point(1060, 440);
+            this.buttonGetProperty.Name = "buttonGetProperty";
+            this.buttonGetProperty.Size = new System.Drawing.Size(19, 23);
+            this.buttonGetProperty.TabIndex = 46;
+            this.buttonGetProperty.Text = "+";
+            this.buttonGetProperty.UseVisualStyleBackColor = true;
+            this.buttonGetProperty.Click += new System.EventHandler(this.button9_Click);
             // 
-            // textBox4
+            // textBoxQuestion
             // 
-            this.textBox4.Location = new System.Drawing.Point(675, 386);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(404, 20);
-            this.textBox4.TabIndex = 44;
+            this.textBoxQuestion.Location = new System.Drawing.Point(675, 386);
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(404, 20);
+            this.textBoxQuestion.TabIndex = 44;
             // 
-            // textBox3
+            // textBoxDictValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(340, 386);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(328, 20);
-            this.textBox3.TabIndex = 35;
+            this.textBoxDictValue.Location = new System.Drawing.Point(340, 386);
+            this.textBoxDictValue.Name = "textBoxDictValue";
+            this.textBoxDictValue.Size = new System.Drawing.Size(328, 20);
+            this.textBoxDictValue.TabIndex = 35;
             // 
             // textBoxInf
             // 
@@ -221,24 +221,24 @@
             this.textBoxPropName.Size = new System.Drawing.Size(234, 20);
             this.textBoxPropName.TabIndex = 20;
             // 
-            // listBox5
+            // listBoxQuestions
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(675, 12);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(404, 368);
-            this.listBox5.TabIndex = 41;
-            this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
+            this.listBoxQuestions.FormattingEnabled = true;
+            this.listBoxQuestions.Location = new System.Drawing.Point(675, 12);
+            this.listBoxQuestions.Name = "listBoxQuestions";
+            this.listBoxQuestions.Size = new System.Drawing.Size(404, 368);
+            this.listBoxQuestions.TabIndex = 41;
+            this.listBoxQuestions.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
-            // button7
+            // buttonDictChange
             // 
-            this.button7.Location = new System.Drawing.Point(382, 416);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 23);
-            this.button7.TabIndex = 40;
-            this.button7.Text = "Редагувати";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonDictChange.Location = new System.Drawing.Point(382, 416);
+            this.buttonDictChange.Name = "buttonDictChange";
+            this.buttonDictChange.Size = new System.Drawing.Size(86, 23);
+            this.buttonDictChange.TabIndex = 40;
+            this.buttonDictChange.Text = "Редагувати";
+            this.buttonDictChange.UseVisualStyleBackColor = true;
+            this.buttonDictChange.Click += new System.EventHandler(this.button7_Click);
             // 
             // label4
             // 
@@ -252,79 +252,79 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 393);
+            this.label3.Location = new System.Drawing.Point(3, 389);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 38;
             this.label3.Text = "Назва";
             // 
-            // button5
+            // buttonDel
             // 
-            this.button5.Location = new System.Drawing.Point(565, 416);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Видалити";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonDel.Location = new System.Drawing.Point(565, 416);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(75, 23);
+            this.buttonDel.TabIndex = 37;
+            this.buttonDel.Text = "Видалити";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // buttonDictAdd
             // 
-            this.button6.Location = new System.Drawing.Point(474, 416);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(85, 23);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "Додати";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonDictAdd.Location = new System.Drawing.Point(474, 416);
+            this.buttonDictAdd.Name = "buttonDictAdd";
+            this.buttonDictAdd.Size = new System.Drawing.Size(85, 23);
+            this.buttonDictAdd.TabIndex = 36;
+            this.buttonDictAdd.Text = "Додати";
+            this.buttonDictAdd.UseVisualStyleBackColor = true;
+            this.buttonDictAdd.Click += new System.EventHandler(this.button6_Click);
             // 
-            // listBox3
+            // listBoxSIct
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(340, 11);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(328, 368);
-            this.listBox3.TabIndex = 34;
-            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
+            this.listBoxSIct.FormattingEnabled = true;
+            this.listBoxSIct.Location = new System.Drawing.Point(340, 11);
+            this.listBoxSIct.Name = "listBoxSIct";
+            this.listBoxSIct.Size = new System.Drawing.Size(328, 368);
+            this.listBoxSIct.TabIndex = 34;
+            this.listBoxSIct.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
-            // listBox1
+            // listBoxProperties
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 11);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(328, 368);
-            this.listBox1.TabIndex = 33;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxProperties.FormattingEnabled = true;
+            this.listBoxProperties.Location = new System.Drawing.Point(6, 11);
+            this.listBoxProperties.Name = "listBoxProperties";
+            this.listBoxProperties.Size = new System.Drawing.Size(328, 368);
+            this.listBoxProperties.TabIndex = 33;
+            this.listBoxProperties.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button1
+            // buttonQuestionDel
             // 
-            this.button1.Location = new System.Drawing.Point(858, 525);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Видалити";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonQuestionDel.Location = new System.Drawing.Point(858, 525);
+            this.buttonQuestionDel.Name = "buttonQuestionDel";
+            this.buttonQuestionDel.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuestionDel.TabIndex = 31;
+            this.buttonQuestionDel.Text = "Видалити";
+            this.buttonQuestionDel.UseVisualStyleBackColor = true;
+            this.buttonQuestionDel.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // buttonQuestionAdd
             // 
-            this.button2.Location = new System.Drawing.Point(767, 525);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Додати";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonQuestionAdd.Location = new System.Drawing.Point(767, 525);
+            this.buttonQuestionAdd.Name = "buttonQuestionAdd";
+            this.buttonQuestionAdd.Size = new System.Drawing.Size(85, 23);
+            this.buttonQuestionAdd.TabIndex = 30;
+            this.buttonQuestionAdd.Text = "Додати";
+            this.buttonQuestionAdd.UseVisualStyleBackColor = true;
+            this.buttonQuestionAdd.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // buttonQuestionChange
             // 
-            this.button4.Location = new System.Drawing.Point(675, 525);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 23);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Редагувати";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonQuestionChange.Location = new System.Drawing.Point(675, 525);
+            this.buttonQuestionChange.Name = "buttonQuestionChange";
+            this.buttonQuestionChange.Size = new System.Drawing.Size(86, 23);
+            this.buttonQuestionChange.TabIndex = 29;
+            this.buttonQuestionChange.Text = "Редагувати";
+            this.buttonQuestionChange.UseVisualStyleBackColor = true;
+            this.buttonQuestionChange.Click += new System.EventHandler(this.button4_Click);
             // 
             // buttonPropDel
             // 
@@ -687,23 +687,23 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn banDataGridViewCheckBoxColumn;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxQuestionProperty;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonGetProperty;
+        private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.TextBox textBoxDictValue;
         private System.Windows.Forms.TextBox textBoxInf;
         private System.Windows.Forms.TextBox textBoxPropName;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonDictChange;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button buttonDictAdd;
+        private System.Windows.Forms.ListBox listBoxSIct;
+        private System.Windows.Forms.ListBox listBoxProperties;
+        private System.Windows.Forms.Button buttonQuestionDel;
+        private System.Windows.Forms.Button buttonQuestionAdd;
+        private System.Windows.Forms.Button buttonQuestionChange;
         private System.Windows.Forms.Button buttonPropDel;
         private System.Windows.Forms.Button buttonPropAdd;
         private System.Windows.Forms.Button buttonPropReg;
@@ -731,7 +731,7 @@
         private System.Windows.Forms.DataGridView dataGridViewUser;
         private System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.Button buttonGetPropertyValue;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox listBoxQuestions;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonGetQuestion;
         private System.Windows.Forms.TextBox textBoxNextQuestion;
