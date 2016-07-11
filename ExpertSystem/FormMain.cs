@@ -77,7 +77,7 @@ namespace ExpertSystem
                 questions.Add(q.Question);
             }
             listBox5.DataSource = questions.ToList();
-            listBox6.DataSource = questions.ToList();
+            listQuestions.DataSource = questions.ToList();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -126,7 +126,7 @@ namespace ExpertSystem
                                  where c.BookId == CurrentBookId
                                  select c).ToList();
                     propertiesCurrent = pdata;
-                    dataGridView1.DataSource = propertiesCurrent;
+                    dataGridViewCurrentProperties.DataSource = propertiesCurrent;
                 }
                 catch { }
             }
@@ -504,7 +504,7 @@ namespace ExpertSystem
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            int id = Int32.Parse(dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString());
+            int id = Int32.Parse(dataGridViewCurrentProperties[0, dataGridViewCurrentProperties.CurrentRow.Index].Value.ToString());
             var currentproperty = from c in myContext.Properties
                                   where c.Id == id
                                   select c;
@@ -512,7 +512,7 @@ namespace ExpertSystem
             {
                 CurrentBookProperty = u;
             }
-            textBox1.Text = CurrentBookProperty.Value;
+            textBoxPropertyValue.Text = CurrentBookProperty.Value;
             try
             {
                 List<String> propdict = new List<String>();
@@ -524,7 +524,7 @@ namespace ExpertSystem
                 {
                     propdict.Add(p.Value);
                 }
-                listBox4.DataSource = propdict.ToList();
+                listBoxCurPropertyDict.DataSource = propdict.ToList();
             }
             catch { }
             try
@@ -532,7 +532,7 @@ namespace ExpertSystem
                 var curquestion = (from q in myContext.PropertyQuestions
                                    where q.Id == CurrentBookProperty.NextQuestion
                                    select q.Question).Single();
-                textBox6.Text = curquestion;
+                textBoxNextQuestion.Text = curquestion;
             }
             catch { }
             // textBoxInf.Text = CurrentBookProperty.Information;
@@ -611,17 +611,17 @@ namespace ExpertSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int index = Int32.Parse(dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString());
+            int index = Int32.Parse(dataGridViewCurrentProperties[0, dataGridViewCurrentProperties.CurrentRow.Index].Value.ToString());
             var currentproperty = from p in myContext.Properties
                                   where p.Id == index
                                   select p;
             foreach (var p in currentproperty)
             {
-                p.Value = textBox1.Text;
+                p.Value = textBoxPropertyValue.Text;
                 try
                 {
                     var questionId = (from q in myContext.PropertyQuestions
-                                      where q.Question == textBox6.Text
+                                      where q.Question == textBoxNextQuestion.Text
                                       select q.Id).Single();
                     p.NextQuestion = questionId;
                 }
@@ -644,7 +644,7 @@ namespace ExpertSystem
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = listBox1.SelectedItem.ToString();
-            var plist = (from p in myContext.Properties
+            var plist = (from p in myContext.Propertiest
                          where p.Name == name
                          select p).First();
             textBoxPropName.Text = plist.Name;
@@ -853,12 +853,12 @@ namespace ExpertSystem
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1.Text = listBox4.SelectedItem.ToString();
+            textBoxPropertyValue.Text = listBoxCurPropertyDict.SelectedItem.ToString();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            textBox6.Text = listBox6.SelectedItem.ToString();
+            textBoxNextQuestion.Text = listQuestions.SelectedItem.ToString();
         }
 
         public float WeightCalculating(AnswerWeight weight)

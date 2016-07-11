@@ -58,15 +58,15 @@
             this.buttonPropReg = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonGetQuestion = new System.Windows.Forms.Button();
+            this.textBoxNextQuestion = new System.Windows.Forms.TextBox();
+            this.listQuestions = new System.Windows.Forms.ListBox();
+            this.buttonGetPropertyValue = new System.Windows.Forms.Button();
+            this.listBoxCurPropertyDict = new System.Windows.Forms.ListBox();
+            this.dataGridViewCurrentProperties = new System.Windows.Forms.DataGridView();
+            this.buttonPropertChange = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPropertyValue = new System.Windows.Forms.TextBox();
             this.textBoxBook = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonDelBook = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrentProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -359,15 +359,15 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.button10);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.listBox6);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.listBox4);
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.buttonGetQuestion);
+            this.tabPage2.Controls.Add(this.textBoxNextQuestion);
+            this.tabPage2.Controls.Add(this.listQuestions);
+            this.tabPage2.Controls.Add(this.buttonGetPropertyValue);
+            this.tabPage2.Controls.Add(this.listBoxCurPropertyDict);
+            this.tabPage2.Controls.Add(this.dataGridViewCurrentProperties);
+            this.tabPage2.Controls.Add(this.buttonPropertChange);
             this.tabPage2.Controls.Add(this.checkBox1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.textBoxPropertyValue);
             this.tabPage2.Controls.Add(this.textBoxBook);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.buttonDelBook);
@@ -395,68 +395,68 @@
             this.label7.TabIndex = 45;
             this.label7.Text = "Наступне питання";
             // 
-            // button10
+            // buttonGetQuestion
             // 
-            this.button10.Location = new System.Drawing.Point(737, 427);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(25, 21);
-            this.button10.TabIndex = 44;
-            this.button10.Text = "+";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.buttonGetQuestion.Location = new System.Drawing.Point(737, 427);
+            this.buttonGetQuestion.Name = "buttonGetQuestion";
+            this.buttonGetQuestion.Size = new System.Drawing.Size(25, 21);
+            this.buttonGetQuestion.TabIndex = 44;
+            this.buttonGetQuestion.Text = "+";
+            this.buttonGetQuestion.UseVisualStyleBackColor = true;
+            this.buttonGetQuestion.Click += new System.EventHandler(this.button10_Click);
             // 
-            // textBox6
+            // textBoxNextQuestion
             // 
-            this.textBox6.Location = new System.Drawing.Point(495, 428);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(242, 20);
-            this.textBox6.TabIndex = 43;
+            this.textBoxNextQuestion.Location = new System.Drawing.Point(495, 428);
+            this.textBoxNextQuestion.Name = "textBoxNextQuestion";
+            this.textBoxNextQuestion.Size = new System.Drawing.Size(242, 20);
+            this.textBoxNextQuestion.TabIndex = 43;
             // 
-            // listBox6
+            // listQuestions
             // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(408, 200);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(347, 186);
-            this.listBox6.TabIndex = 42;
+            this.listQuestions.FormattingEnabled = true;
+            this.listQuestions.Location = new System.Drawing.Point(408, 200);
+            this.listQuestions.Name = "listQuestions";
+            this.listQuestions.Size = new System.Drawing.Size(347, 186);
+            this.listQuestions.TabIndex = 42;
             // 
-            // button8
+            // buttonGetPropertyValue
             // 
-            this.button8.Location = new System.Drawing.Point(299, 584);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(25, 21);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "+";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.buttonGetPropertyValue.Location = new System.Drawing.Point(299, 584);
+            this.buttonGetPropertyValue.Name = "buttonGetPropertyValue";
+            this.buttonGetPropertyValue.Size = new System.Drawing.Size(25, 21);
+            this.buttonGetPropertyValue.TabIndex = 20;
+            this.buttonGetPropertyValue.Text = "+";
+            this.buttonGetPropertyValue.UseVisualStyleBackColor = true;
+            this.buttonGetPropertyValue.Click += new System.EventHandler(this.button8_Click);
             // 
-            // listBox4
+            // listBoxCurPropertyDict
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(408, 5);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(347, 160);
-            this.listBox4.TabIndex = 19;
+            this.listBoxCurPropertyDict.FormattingEnabled = true;
+            this.listBoxCurPropertyDict.Location = new System.Drawing.Point(408, 5);
+            this.listBoxCurPropertyDict.Name = "listBoxCurPropertyDict";
+            this.listBoxCurPropertyDict.Size = new System.Drawing.Size(347, 160);
+            this.listBoxCurPropertyDict.TabIndex = 19;
             // 
-            // dataGridView1
+            // dataGridViewCurrentProperties
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 457);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 122);
-            this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridViewCurrentProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCurrentProperties.Location = new System.Drawing.Point(6, 457);
+            this.dataGridViewCurrentProperties.Name = "dataGridViewCurrentProperties";
+            this.dataGridViewCurrentProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCurrentProperties.Size = new System.Drawing.Size(749, 122);
+            this.dataGridViewCurrentProperties.TabIndex = 18;
+            this.dataGridViewCurrentProperties.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // button3
+            // buttonPropertChange
             // 
-            this.button3.Location = new System.Drawing.Point(422, 582);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Редагувати";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonPropertChange.Location = new System.Drawing.Point(422, 582);
+            this.buttonPropertChange.Name = "buttonPropertChange";
+            this.buttonPropertChange.Size = new System.Drawing.Size(86, 23);
+            this.buttonPropertChange.TabIndex = 17;
+            this.buttonPropertChange.Text = "Редагувати";
+            this.buttonPropertChange.UseVisualStyleBackColor = true;
+            this.buttonPropertChange.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkBox1
             // 
@@ -469,12 +469,12 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox1
+            // textBoxPropertyValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 585);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 20);
-            this.textBox1.TabIndex = 15;
+            this.textBoxPropertyValue.Location = new System.Drawing.Point(57, 585);
+            this.textBoxPropertyValue.Name = "textBoxPropertyValue";
+            this.textBoxPropertyValue.Size = new System.Drawing.Size(242, 20);
+            this.textBoxPropertyValue.TabIndex = 15;
             // 
             // textBoxBook
             // 
@@ -663,7 +663,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrentProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -708,11 +708,11 @@
         private System.Windows.Forms.Button buttonPropAdd;
         private System.Windows.Forms.Button buttonPropReg;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox listBoxCurPropertyDict;
+        private System.Windows.Forms.DataGridView dataGridViewCurrentProperties;
+        private System.Windows.Forms.Button buttonPropertChange;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPropertyValue;
         private System.Windows.Forms.TextBox textBoxBook;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonDelBook;
@@ -730,12 +730,12 @@
         private System.Windows.Forms.Label labelUserId;
         private System.Windows.Forms.DataGridView dataGridViewUser;
         private System.Windows.Forms.TabControl tabMenu;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonGetPropertyValue;
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.Button buttonGetQuestion;
+        private System.Windows.Forms.TextBox textBoxNextQuestion;
+        private System.Windows.Forms.ListBox listQuestions;
         private System.Windows.Forms.Label labelCount;
         private System.Windows.Forms.Label labelDefWeight;
         private System.Windows.Forms.TextBox textBoxWeight;
