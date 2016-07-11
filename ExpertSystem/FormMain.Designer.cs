@@ -607,7 +607,6 @@
             this.checkBoxAdmin.TabIndex = 8;
             this.checkBoxAdmin.Text = "Адмін";
             this.checkBoxAdmin.UseVisualStyleBackColor = true;
-            this.checkBoxAdmin.CheckedChanged += new System.EventHandler(this.checkBoxAdmin_CheckedChanged);
             // 
             // textBoxUser
             // 

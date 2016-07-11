@@ -14,9 +14,7 @@ namespace ExpertSystem
 {
     public partial class FormMain : Form
     {
-
-        string s = "Data Source=SLAVA-PC\\SQLEXPRESS;Database=ExpSys;Trusted_Connection = True";
-        SqlConnection connectStr = new SqlConnection();
+        ExpDataContext myContext = new ExpDataContext();
         ArrayList User = new ArrayList();
         ArrayList Book = new ArrayList();
         ArrayList Question = new ArrayList();
@@ -24,13 +22,10 @@ namespace ExpertSystem
         ArrayList PropertyDictionary = new ArrayList();
         ArrayList Weight = new ArrayList();
         int CurrentBookId = -1;
-        int CurrentUserId = -1;
-        ExpDataContext myContext = new ExpDataContext();
-        User CurrentUser = new User();
         Book CurrentBook = new Book();
         Property CurrentProperty = new Property();
         Property CurrentBookProperty = new Property();
-
+        bool Init = false;
         public FormMain()
         {
             InitializeComponent();
@@ -38,17 +33,10 @@ namespace ExpertSystem
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            List<User> user = new List<ExpertSystem.User>();
+            DownloadUsers();
             List<Book> book = new List<ExpertSystem.Book>();
             List<Property> property = new List<ExpertSystem.Property>();
-            var data = from c in myContext.Users
-                       orderby c.NickName
-                       select c;
-            foreach (var d in data)
-            {
-                user.Add(d);
-            }
-            dataGridViewUser.DataSource = user;
+            
             var bdata = from b in myContext.Books
                         orderby b.Name
                         select b;
@@ -78,6 +66,7 @@ namespace ExpertSystem
             }
             listBoxQuestions.DataSource = questions.ToList();
             listQuestions.DataSource = questions.ToList();
+            Init = true;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -132,110 +121,6 @@ namespace ExpertSystem
             }
         }
 
-        private void loadUser()
-        {
-
-            ////Loading Users////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from  [User] ");
-            connectStr.Open();
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    User.Add(row);
-                }
-                dr.Close();
-            }
-            connectStr.Close();
-            dataGridViewUser.DataSource = User;
-        }
-
-        private void loadBooks()
-        {
-            /////Loading Books////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from Book");
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    Book.Add(row);
-                }
-                dr.Close();
-            }
-            connectStr.Close();
-        }
-
-        private void loadQuestion()
-        {
-            /////Loading Questions////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from Question");
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    Question.Add(row);
-                }
-                dr.Close();
-            }
-            connectStr.Close();
-        }
-
-        private void loadProperty()
-        {
-            /////Loading Properties////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from [Property]");
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    Property.Add(row);
-                }
-                dr.Close();
-            }
-            connectStr.Close();
-        }
-
-        private void loadPropertyDictionary()
-        {
-            /////Loading PropertyDictionary////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from PropertyDictionary");
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    PropertyDictionary.Add(row);
-                }
-                dr.Close();
-            }
-        }
-
-        private void loadWeight()
-        {
-            /////Loading Weight////
-            connectStr.ConnectionString = s;
-            string sql = string.Format("Select * from Weight");
-            using (SqlCommand cmd = new SqlCommand(sql, connectStr))
-            {
-                SqlDataReader dr = cmd.ExecuteReader();
-                foreach (var row in dr)
-                {
-                    Weight.Add(row);
-                }
-                dr.Close();
-            }
-            connectStr.Close();
-        }
-
         private void зберегтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
@@ -252,48 +137,21 @@ namespace ExpertSystem
 
         private void dataGridViewUser_SelectionChanged(object sender, EventArgs e)
         {
-            CurrentUserId = Int32.Parse(dataGridViewUser[0, dataGridViewUser.CurrentRow.Index].Value.ToString());
-            var currentuser = from c in myContext.Users
-                              where c.Id == CurrentUserId
-                              select c;
-            foreach (var u in currentuser)
+            var currentUser = GetUser(Int32.Parse(dataGridViewUser[0, dataGridViewUser.CurrentRow.Index].Value.ToString()));
+            if (Init)
             {
-                CurrentUser = u;
+                checkBoxAdmin.Checked=currentUser.Admin == true ? true : false;
+                checkBoxBan.Checked =currentUser.Ban == true ? true : false;
+                textBoxUser.Text = currentUser.NickName;
+                labelUserId.Text = currentUser.Id.ToString();
             }
-            if (CurrentUser.Admin == true)
-            {
-                checkBoxAdmin.Checked = true;
-            }
-            else
-            {
-                checkBoxAdmin.Checked = false;
-            }
-            if (CurrentUser.Ban == true)
-                checkBoxBan.Checked = true;
-            else checkBoxBan.Checked = false;
-            textBoxUser.Text = dataGridViewUser[1, dataGridViewUser.CurrentRow.Index].Value.ToString();
-            labelUserId.Text = dataGridViewUser[0, dataGridViewUser.CurrentRow.Index].Value.ToString();
-        }
-
-        private void checkBoxAdmin_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CurrentUser.NickName = textBoxUser.Text;
-            CurrentUser.Ban = checkBoxBan.Checked;
-            CurrentUser.Admin = checkBoxAdmin.Checked;
-            var userUpdate = from c in myContext.Users
-                             where c.Id == CurrentUser.Id
-                             select c;
-            foreach (var u in userUpdate)
-            {
-                u.NickName = CurrentUser.NickName;
-                u.Ban = CurrentUser.Ban;
-                u.Admin = CurrentUser.Admin;
-            }
+            var currentUser = GetUser(Int32.Parse(dataGridViewUser[0, dataGridViewUser.CurrentRow.Index].Value.ToString()));
+            currentUser.Ban = checkBoxBan.Checked;
+            currentUser.Admin = checkBoxAdmin.Checked;
             myContext.SubmitChanges();
         }
 
@@ -868,6 +726,29 @@ namespace ExpertSystem
                        select e.Count).Single();
             float newWeight = weight.Counter / ExpS * weight.DefaultWeight;           
             return newWeight;
+        }
+
+        public void DownloadUsers()
+        {
+            try
+            {
+                var users = (from c in myContext.Users
+                             orderby c.NickName
+                             select c).ToList();
+                dataGridViewUser.DataSource = users;
+            }
+            catch
+            {
+                MessageBox.Show("Проблема при з'єднанні із базою");
+            }   
+        }
+
+        public User GetUser(int id)
+        {
+            var user = (from c in myContext.Users
+                               where c.Id == id
+                               select c).Single();
+            return user;
         }
     }
 }
